@@ -1,7 +1,7 @@
 +++
 title = "Frequently Asked Questions"
 description = "Find answers to frequently asked questions"
-authors = ["randomboi404"]
+authors = ["tr1x_em","randomboi404"]
 date = 2025-12-20
 +++
 
