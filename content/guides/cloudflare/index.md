@@ -8,15 +8,12 @@ insert_anchor_links = "left"
 
 # Cloudfare Services
 
-<ol>
-
-<li>
-
 ## Using Cloudfare Pages
 
 - Create your cloudfare pages using the [docs](https://developers.cloudflare.com/pages) and deploy it normally.
 - In your Pages project settings, copy the default pages domain. (e.g. `your-project-pages.dev`)
 - Add a CNAME record in your subdomain json file:
+
 ```json
 {
     "type": "CNAME",
@@ -25,24 +22,23 @@ insert_anchor_links = "left"
     "proxied": true
 }
 ```
+
 - Submit the PR and wait for the approval.
 - Once merged, go back to Cloudflare Pages → Custom Domains and add:
-`example.is-an-ai.dev`
+  `example.is-an-ai.dev`
 
 {% alert(note=true) %}
+
 - The record must be proxied.
-{% end %}
-
-</li>
-
-<li>
+  {% end %}
 
 ## Using Cloudfare Workers
 
 - Create and configure your cloudfare worker using the [docs](https://developers.cloudflare.com/workers).
 - Deploy the worker so it is accessible at:
-`your-worker.your-account.workers.dev`
+  `your-worker.your-account.workers.dev`
 - Add a CNAME record in your subdomain json file pointing to the domain of worker:
+
 ```json
 {
     "type": "CNAME",
@@ -51,29 +47,29 @@ insert_anchor_links = "left"
     "proxied": true
 }
 ```
+
 - Submit the PR and wait for the approval.
 - Once merged, go back to Cloudflare Dashboard → Workers → Custom Domains and add:
-`example.is-an-ai.dev`
+  `example.is-an-ai.dev`
 
 {% alert(note=true) %}
+
 - The record must be proxied.
-{% end %}
+  {% end %}
 
 {% alert(warning=true) %}
+
 - Workers must serve legitimate content.
 - Abuse, scraping, phishing, or tunneling will lead to removal.
-{% end %}
-
-</li>
-
-<li>
+  {% end %}
 
 ## Using Cloudflare Tunnel (cloudflared)
 
 - Create a tunnel using `cloudflared`. (Visit [docs](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel) for more info)
 - Cloudflare will generate a tunnel domain like:
-`<uuid>.cfargotunnel.com`
+  `<uuid>.cfargotunnel.com`
 - Add a CNAME record in your subdomain json file:
+
 ```json
 {
     "type": "CNAME",
@@ -84,19 +80,17 @@ insert_anchor_links = "left"
 ```
 
 {% alert(note=true) %}
+
 - The record must be proxied.
-{% end %}
+  {% end %}
 
 {% alert(warning=true) %}
+
 - No private dashboards are allowed.
 - No admin panels are allowed.
 - No internal services are allowed.
 - Service must be publicly accessible.
-{% end %}
-
-</li>
-
-</ol>
+  {% end %}
 
 # Restricted Services
 
